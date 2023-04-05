@@ -24,7 +24,7 @@ First, we proceed to ```Sign Up``` / ```Sign In``` by entering our email in the 
 
 After successful login, an interface like this will be displayed:
 
-![HomePage](https://flic.kr/ps/41ZdZz)
+![HomePage](https://flic.kr/ps/41ZdZzz)
 
 The website includes functions such as adding, deleting, and editing a Blog post; Filter and search blog posts. In addition, we can also edit our own profile by clicking the ```Profile``` button.
 
