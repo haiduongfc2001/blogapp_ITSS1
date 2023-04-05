@@ -20,12 +20,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 First, we proceed to ```Sign Up``` / ```Sign In``` by entering our email in the Input box ```Email address```. After clicking the ```Sign in``` button, a link (```Magic Link```) will be sent to the email you entered so you can ```Sign Up``` / ```Sign In```.
 
-![Ảnh minh họa về cây cầu](https://www.google.com/url?sa=i&url=https%3A%2F%2Fdantri.com.vn%2Fthe-thao%2Fdai-gia-saudi-arabia-chi-luong-cao-khung-khiep-cho-messi-gap-doi-cronaldo-20230405145319768.htm&psig=AOvVaw06lhMSe64kaq3YGx35whHL&ust=1680792887073000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCOi1mcr_kv4CFQAAAAAdAAAAABAE)
-
-After successful login, an interface like this will be displayed:
-
-![HomePage](https://flic.kr/ps/41ZdZzz)
-
 The website includes functions such as adding, deleting, and editing a Blog post; Filter and search blog posts. In addition, we can also edit our own profile by clicking the ```Profile``` button.
 
 The last function is ```Logout``` when the ```Logout``` button is clicked.
