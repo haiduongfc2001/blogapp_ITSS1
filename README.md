@@ -20,7 +20,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 First, we proceed to ```Sign Up``` / ```Sign In``` by entering our email in the Input box ```Email address```. After clicking the ```Sign in``` button, a link (```Magic Link```) will be sent to the email you entered so you can ```Sign Up``` / ```Sign In```.
 
-![Sign in Page](https://photos.app.goo.gl/QJHD421CEw6w5cKc9)
+![Sign in Page](https://drive.google.com/file/d/1tIxT8QE25i6_0DxeJBU9er2AjSK6i5Qq/view?usp=share_link)
 
 After successful login, an interface like this will be displayed:
 
