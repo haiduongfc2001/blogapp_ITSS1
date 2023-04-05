@@ -76,6 +76,9 @@ const SignIn = () => {
                                         name="email"
                                         type="email"
                                         autoComplete="email"
+                                        border={"1px solid black"}
+                                        color={"black"}
+                                        placeholder="Enter your email address"
                                         required
                                         value={email}
                                         onChange={changeHandler}

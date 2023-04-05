@@ -229,8 +229,8 @@ const Home = () => {
                     <Box display="flex" alignItems="center" flexWrap="nowrap">
                         <Text mr={2} minWidth={"54px"}>Sort by</Text>
                         <Select
-                            // placeholder="Category"
                             placeholder="Category"
+                            borderColor={"black"}
                             onChange={(e) => setSelectedCategory(e.target.value)}
                             value={
                                 allBlogsClicked
