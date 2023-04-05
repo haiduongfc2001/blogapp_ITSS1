@@ -233,9 +233,7 @@ const Home = () => {
                             borderColor={"black"}
                             onChange={(e) => setSelectedCategory(e.target.value)}
                             value={
-                                allBlogsClicked
-                                    ? ''
-                                    : selectedCategory || ''
+                                !allBlogsClicked ? selectedCategory || '' : ''
                             }
                         >
                             <option value="Travel">Travel</option>
