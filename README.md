@@ -20,7 +20,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 First, we proceed to ```Sign Up``` / ```Sign In``` by entering our email in the Input box ```Email address```. After clicking the ```Sign in``` button, a link (```Magic Link```) will be sent to the email you entered so you can ```Sign Up``` / ```Sign In```.
 
-![Sign in Page](https://flic.kr/ps/41ZdZz)
+![Sign in Page](https://flic.kr/p/2orhMS1)
 
 After successful login, an interface like this will be displayed:
 
