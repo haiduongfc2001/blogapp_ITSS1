@@ -47,7 +47,7 @@ const SignIn = () => {
     return (
         <Box minH="100vh" py="12" px={{ base: "4", lg: "8" }} bg="gray.50">
             <Box maxW="md" mx="auto">
-                <Heading textAlign="center" m="6">
+                <Heading textAlign="center" m="6" color={"black"}>
                     Welcome to Todo App
                 </Heading>
                 {error && (
@@ -71,7 +71,7 @@ const SignIn = () => {
                         <chakra.form onSubmit={submitHandler}>
                             <Stack spacing="6">
                                 <FormControl id="email">
-                                    <FormLabel>Email address</FormLabel>
+                                    <FormLabel color={"black"}>Email address</FormLabel>
                                     <Input
                                         name="email"
                                         type="email"
