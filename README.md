@@ -20,6 +20,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 First, we proceed to ```Sign Up``` / ```Sign In``` by entering our email in the Input box ```Email address```. After clicking the ```Sign in``` button, a link (```Magic Link```) will be sent to the email you entered so you can ```Sign Up``` / ```Sign In```.
 
+![signin page](https://raw.githubusercontent.com/haiduongfc2001/blogapp_ITSS1/main/public/signin%20page.png)
+
+After successful login, the homepage will appear as shown below:
+
+![homepage](https://github.com/haiduongfc2001/blogapp_ITSS1/blob/main/public/homepage.png?raw=true)
+
 The website includes functions such as adding, deleting, and editing a Blog post; Filter and search blog posts. In addition, we can also edit our own profile by clicking the ```Profile``` button.
 
 The last function is ```Logout``` when the ```Logout``` button is clicked.
