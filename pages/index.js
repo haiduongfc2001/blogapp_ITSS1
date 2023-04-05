@@ -32,6 +32,8 @@ const Home = () => {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const toast = useToast();
 
+    const [allBlogsClicked, setAllBlogsClicked] = useState(false);
+
     const router = useRouter();
     const { isOpen, onOpen, onClose } = useDisclosure();
     const user = supabaseClient.auth.user();
@@ -117,6 +119,7 @@ const Home = () => {
     const allTodos = () => {
         setSelectedStatus(null);
         setSelectedCategory(null);
+        setAllBlogsClicked(true);
     };
 
 
@@ -149,19 +152,25 @@ const Home = () => {
     //     setSelectedCategory(null);
     // };
 
+    // const filteredTodos = selectedCategory !== null
+    //     ? todos.filter(todo => todo.category === selectedCategory && todo.isComplete === selectedStatus)
+    //     : selectedStatus !== null
+    //         ? todos.filter(todo => todo.isComplete === selectedStatus)
+    //         : todos;
+
     const filteredTodos = selectedCategory !== null
-        ? todos.filter(todo => todo.category === selectedCategory && todo.isComplete === selectedStatus)
+        ? todos.filter(
+            todo => todo.category === selectedCategory
+                && (selectedStatus === null || todo.isComplete === selectedStatus)
+        )
         : selectedStatus !== null
             ? todos.filter(todo => todo.isComplete === selectedStatus)
             : todos;
 
+
     // const filteredTodos = selectedCategory !== null
     //     ? todos.filter(todo => todo.category === selectedCategory && todo.isComplete === selectedStatus)
     //     : todos.filter(todo => todo.isComplete === selectedStatus);
-
-    // const filteredTodos = selectedCategory !== null
-    //     ? todos.filter(todo => todo.category === selectedCategory)
-    //     : todos;
 
     // const filteredTodos =
     //     selectedStatus !== null
@@ -220,15 +229,21 @@ const Home = () => {
                     <Box display="flex" alignItems="center" flexWrap="nowrap">
                         <Text mr={2} minWidth={"54px"}>Sort by</Text>
                         <Select
+                            // placeholder="Category"
                             placeholder="Category"
-                            onChange={(e) => setSelectedCategory(e.target.value)}>
+                            onChange={(e) => setSelectedCategory(e.target.value)}
+                            value={
+                                allBlogsClicked
+                                    ? ''
+                                    : selectedCategory || ''
+                            }
+                        >
                             <option value="Travel">Travel</option>
                             <option value="Sport">Sport</option>
                             <option value="Music">Music</option>
                             <option value="Other">Other</option>
                         </Select>
                     </Box>
-
                 </Flex>
 
                 <SimpleGrid
