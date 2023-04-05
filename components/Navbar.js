@@ -1,7 +1,7 @@
 import {
     Box,
     Button,
-    ButtonGroup,
+    ButtonGroup, color,
     Flex, FormControl,
     FormLabel,
     Heading,
@@ -42,7 +42,7 @@ const Navbar = ({ onOpen }) => {
                 >
                     <Box display={'flex'}>
                         <NavLink href="/">
-                            <Heading mr="4" as="button">
+                            <Heading mr="4" as="button" color={"black"}>
                                 BlogApp
                             </Heading>
                         </NavLink>
@@ -52,9 +52,10 @@ const Navbar = ({ onOpen }) => {
                                     <SearchIcon color='gray.500' />
                                 </InputLeftElement>
                                 <Input
+                                    className='my-input'
                                     type='text'
                                     placeholder='Search Blog'
-                                    _placeholder='black'
+                                    color = 'black'
                                     borderColor={'black'}
                                 />
                             </InputGroup>

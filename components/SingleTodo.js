@@ -31,8 +31,9 @@ const SingleTodo = ({ todo, openHandler, deleteHandler, isDeleteLoading }) => {
             borderRadius="lg"
             overflow="hidden"
             p="4"
+            backgroundColor={'#edf2f7'}
         >
-            <Heading size="md" mt="3">
+            <Heading size="md" mt="3" color={'black'}>
                 {todo.title}
             </Heading>
             <Badge margin='8px auto'
@@ -52,7 +53,7 @@ const SingleTodo = ({ todo, openHandler, deleteHandler, isDeleteLoading }) => {
             <Text color="gray.400" mt="1" fontSize="sm">
                 {getDateInMonthDayYear(todo.insertedat)}
             </Text>
-            <Divider my="4" />
+            <Divider my="4" h='4px' colorScheme={"red"} />
             <Text noOfLines={[1, 2, 3]} color="gray.800">
                 {todo.description}
             </Text>
