@@ -48,7 +48,7 @@ const SignIn = () => {
         <Box minH="100vh" py="12" px={{ base: "4", lg: "8" }} bg="gray.50">
             <Box maxW="md" mx="auto">
                 <Heading textAlign="center" m="6" color={"black"}>
-                    Welcome to Todo App
+                    Welcome to Blog App
                 </Heading>
                 {error && (
                     <Alert status="error" mb="6">
@@ -65,7 +65,11 @@ const SignIn = () => {
                 >
                     {isSubmitted ? (
                         <Heading size="md" textAlign="center" color="gray.600">
-                            Please check {email} for login link
+                            Please check
+                            <Text color={"red"}>
+                                {email}
+                            </Text>
+                            for signup/login link
                         </Heading>
                     ) : (
                         <chakra.form onSubmit={submitHandler}>
