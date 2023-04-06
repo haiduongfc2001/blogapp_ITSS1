@@ -22,6 +22,8 @@ First, we proceed to ```Sign Up``` / ```Sign In``` by entering our email in the 
 
 ![signin page](https://raw.githubusercontent.com/haiduongfc2001/blogapp_ITSS1/main/public/signin%20page.png)
 
+![Magic Link](https://github.com/haiduongfc2001/blogapp_ITSS1/blob/main/public/magicl_ink.png?raw=true)
+
 After successful login, the homepage will appear as shown below:
 
 ![homepage](https://github.com/haiduongfc2001/blogapp_ITSS1/blob/main/public/homepage.png?raw=true)
