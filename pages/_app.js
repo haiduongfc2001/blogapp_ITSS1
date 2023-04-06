@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { supabaseClient } from "../lib/client";
 import customTheme from "../lib/theme";
-import '../styles/globals.css'
+import "../styles/globals.css"
 import '../styles/Home.module.css'
 
 function MyApp({ Component, pageProps }) {

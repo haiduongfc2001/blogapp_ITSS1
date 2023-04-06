@@ -1,23 +1,30 @@
 import {
     Box,
     Button,
-    ButtonGroup, color,
+    ButtonGroup, color, Divider,
     Flex, FormControl,
     FormLabel,
-    Heading,
+    Heading, IconButton,
     Input,
     InputGroup,
-    InputLeftElement, Stack
+    InputLeftElement, InputRightElement, Stack
 } from "@chakra-ui/react";
 import NavLink from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { supabaseClient } from "../lib/client";
-import {PhoneIcon, SearchIcon} from "@chakra-ui/icons";
+import {SearchIcon} from "@chakra-ui/icons";
 
-const Navbar = ({ onOpen }) => {
+const Navbar = ({ onOpen, onSearch }) => {
     const router = useRouter();
     const [isLogoutLoading, setIsLogoutLoading] = useState(false);
+
+    // const handleSearch = (event) => {
+    //     onSearch(event.target.value);
+    // };
+    const handleSearch = (event) => {
+        onSearch(event.target.value.toLowerCase());
+    };
 
     const logoutHandler = async () => {
         try {
@@ -47,17 +54,33 @@ const Navbar = ({ onOpen }) => {
                             </Heading>
                         </NavLink>
                         <Stack id="search" ml={'20px'} marginTop={'2px'}>
-                            <InputGroup>
-                                <InputLeftElement pointerEvents='none'>
-                                    <SearchIcon color='gray.500' />
-                                </InputLeftElement>
+                            <InputGroup
+                                zIndex="10"
+                                _hover={{
+                                    borderColor: "rgba(7,50,135,0.4)",
+                                    borderWidth: "2px",
+                                    borderRadius: "0.375rem"
+                            }}
+                            >
                                 <Input
                                     className='my-input'
                                     type='text'
                                     placeholder='Search Blog'
                                     color = 'black'
                                     borderColor={'black'}
+                                    onChange={handleSearch}
                                 />
+                                <InputRightElement>
+                                    <Box mx="0" h="24px" borderRight="1px solid black"></Box>
+                                    <IconButton
+                                        mr={"2px"}
+                                        height={"38px"}
+                                        backgroundColor={"transparent"}
+                                        aria-label="Search"
+                                        icon={<SearchIcon color='gray.500' />}
+                                        // onClick={handleSearch}
+                                    />
+                                </InputRightElement>
                             </InputGroup>
                         </Stack>
                     </Box>

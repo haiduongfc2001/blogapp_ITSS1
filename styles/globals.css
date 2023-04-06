@@ -110,3 +110,8 @@ Input::placeholder {
   color: gray;
 }
 
+.my-input-group:hover {
+  border-color: blue;
+}
+
+

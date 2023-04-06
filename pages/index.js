@@ -3,12 +3,9 @@ import {
     Box,
     Button,
     ButtonGroup, Flex,
-    FormControl,
-    FormLabel,
     HStack,
     Select,
     SimpleGrid,
-    Tag,
     Text, useToast
 } from "@chakra-ui/react";
 import Head from "next/head";
@@ -33,6 +30,7 @@ const Home = () => {
     const toast = useToast();
 
     const [allBlogsClicked, setAllBlogsClicked] = useState(false);
+    const [searchTerm, setSearchTerm] = useState("");
 
     const router = useRouter();
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -90,11 +88,7 @@ const Home = () => {
     }, []);
 
     const openHandler = (clickedTodo) => {
-        // setSelectedStatus(clickedTodo.isComplete);
-        // setTodo(clickedTodo);
-        // onOpen();
         setTodo(clickedTodo);
-        setSelectedStatus(clickedTodo.isComplete);
         onOpen();
     };
 
@@ -122,64 +116,35 @@ const Home = () => {
         setAllBlogsClicked(true);
     };
 
-
-    // const allTodos = () => {
-    //     setSelectedStatus(null);
-    //     setSelectedCategory(null);
-    // };
-
     const publishHandler = () => {
         setPublished(todos.filter((t) => t.isComplete === true));
         setSelectedCategory(null);
         setSelectedStatus(true);
     };
-    // const publishHandler = () => {
-    //     const publishedTodos = todos.filter((t) => t.isComplete === true);
-    //     setPublished(publishedTodos);
-    //     setSelectedStatus(true);
-    //     setSelectedCategory(null);
-    // };
 
     const unpublishHandler = () => {
         setUnPublished(todos.filter((t) => t.isComplete === false));
         setSelectedCategory(null);
         setSelectedStatus(false);
     };
-    // const unpublishHandler = () => {
-    //     const unpublishedTodos = todos.filter((t) => t.isComplete === false);
-    //     setUnPublished(unpublishedTodos);
-    //     setSelectedStatus(false);
-    //     setSelectedCategory(null);
-    // };
-
-    // const filteredTodos = selectedCategory !== null
-    //     ? todos.filter(todo => todo.category === selectedCategory && todo.isComplete === selectedStatus)
-    //     : selectedStatus !== null
-    //         ? todos.filter(todo => todo.isComplete === selectedStatus)
-    //         : todos;
 
     const filteredTodos = selectedCategory !== null
         ? todos.filter(
-            todo => todo.category === selectedCategory
-                && (selectedStatus === null || todo.isComplete === selectedStatus)
+            (todo) =>
+                todo.category === selectedCategory &&
+                (selectedStatus === null || todo.isComplete === selectedStatus) &&
+                (searchTerm === "" || (todo.title.toLowerCase().includes(searchTerm) ||
+                    todo.description.toLowerCase().includes(searchTerm)))
         )
         : selectedStatus !== null
-            ? todos.filter(todo => todo.isComplete === selectedStatus)
-            : todos;
-
-
-    // const filteredTodos = selectedCategory !== null
-    //     ? todos.filter(todo => todo.category === selectedCategory && todo.isComplete === selectedStatus)
-    //     : todos.filter(todo => todo.isComplete === selectedStatus);
-
-    // const filteredTodos =
-    //     selectedStatus !== null
-    //         ? selectedStatus
-    //             ? published
-    //             : unpublished
-    //         : selectedCategory !== null
-    //             ? todos.filter(todo => todo.category === selectedCategory)
-    //             : todos;
+            ? todos.filter(
+                (todo) =>
+                    todo.isComplete === selectedStatus &&
+                    (searchTerm === "" || (todo.title.toLowerCase().includes(searchTerm) ||
+                        todo.description.toLowerCase().includes(searchTerm)))
+            )
+            : todos.filter((todo) => (todo.title.toLowerCase().includes(searchTerm) ||
+                todo.description.toLowerCase().includes(searchTerm)));
 
     return (
         <div>
@@ -192,7 +157,7 @@ const Home = () => {
                 <link rel="icon" href="/iconpage.png" />
             </Head>
             <main>
-                <Navbar onOpen={onOpen} />
+                <Navbar onOpen={onOpen} onSearch={setSearchTerm} />
                 <ManageTodo
                     isOpen={isOpen}
                     onClose={onClose}
@@ -233,7 +198,7 @@ const Home = () => {
                             borderColor={"black"}
                             onChange={(e) => setSelectedCategory(e.target.value)}
                             value={
-                                !allBlogsClicked ? selectedCategory || '' : ''
+                                allBlogsClicked ? '' : selectedCategory || ''
                             }
                         >
                             <option value="Travel">Travel</option>
