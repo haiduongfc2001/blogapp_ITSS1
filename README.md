@@ -20,7 +20,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 First, we proceed to ```Sign Up``` / ```Sign In``` by entering our email in the Input box ```Email address```. After clicking the ```Sign in``` button, a link (```Magic Link```) will be sent to the email you entered so you can ```Sign Up``` / ```Sign In```.
 
-![signin page](https://raw.githubusercontent.com/haiduongfc2001/blogapp_ITSS1/main/public/signin%20page.png)
+![signin page](https://raw.githubusercontent.com/haiduongfc2001/blogapp_ITSS1/main/public/signin_page.png)
 
 ![Magic Link](https://github.com/haiduongfc2001/blogapp_ITSS1/blob/main/public/magicl_ink.png?raw=true)
 
