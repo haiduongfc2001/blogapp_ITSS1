@@ -6,7 +6,7 @@ Live Demo: [Blog App](https://blogapp-itss-1.vercel.app)
 
 ## Project Description
 
-In this project I have created a Blog App. We have used ```React.js```, ```Next.js``` and ```[Supabase](https://supabase.com)``` to implement CRUD features a Blog; login, user registration via ```Magic Link``` sent to email when user wants to login, register. In addition, we use the library ```[Chakra UI](https://chakra-ui.com)``` to make the project more beautiful. This will be a complete beginner-friendly application.
+In this project I have created a Blog App. We have used ```React.js```, ```Next.js``` and [Supabase](https://supabase.com) to implement CRUD features a Blog; login, user registration via ```Magic Link``` sent to email when user wants to login, register. In addition, we use the library [Chakra UI](https://chakra-ui.com) to make the project more beautiful. This will be a complete beginner-friendly application.
 
 ## Getting Started
 
