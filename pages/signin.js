@@ -66,9 +66,14 @@ const SignIn = () => {
                     {isSubmitted ? (
                         <Heading size="md" textAlign="center" color="gray.600">
                             Please check
-                            <Text color={"red"}>
+                            <Box
+                                border="1px solid"
+                                bgColor="#F7FAFC"
+                                color={"black"}
+
+                            >
                                 {email}
-                            </Text>
+                            </Box>
                             for signup/login link
                         </Heading>
                     ) : (

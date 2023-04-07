@@ -7,7 +7,6 @@ import {
     FormHelperText,
     FormLabel,
     Input,
-    Image,
     Modal,
     ModalBody,
     ModalCloseButton,
@@ -17,7 +16,7 @@ import {
     ModalOverlay,
     Switch,
     Text,
-    Textarea, Select, AlertTitle, AlertDescription, useToast,
+    Textarea, Select, useToast,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { supabaseClient } from "../lib/client";
@@ -153,7 +152,9 @@ const ManageTodo = ({ isOpen, onClose, initialRef, todo, setTodo }) => {
                             <Switch
                                 isChecked={isComplete}
                                 id="is-completed"
-                                onChange={(event) => setIsComplete(!isComplete)}
+                                onChange={() => {
+                                    setIsComplete(!isComplete);
+                                }}
                             />
                         </FormControl>
                     </ModalBody>

@@ -202,6 +202,7 @@ const Profile = () => {
                             <Input
                                 type='tel'
                                 placeholder='Add your phone here'
+                                pattern="[0-9]*"
                                 onChange={(event) => setPhone(event.target.value)}
                                 value={phone}
                             />

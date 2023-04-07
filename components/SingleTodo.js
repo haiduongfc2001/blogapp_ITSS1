@@ -64,7 +64,6 @@ const SingleTodo = ({ todo, openHandler, deleteHandler, isDeleteLoading }) => {
                 // mx="5%"
                 mt="10px"
                 mb="10px"
-
             />
             <Text
                 noOfLines={[1, 2, 3, 4]}

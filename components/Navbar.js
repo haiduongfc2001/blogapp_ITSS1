@@ -19,12 +19,14 @@ const Navbar = ({ onOpen, onSearch }) => {
     const router = useRouter();
     const [isLogoutLoading, setIsLogoutLoading] = useState(false);
 
-    // const handleSearch = (event) => {
-    //     onSearch(event.target.value);
-    // };
     const handleSearch = (event) => {
         onSearch(event.target.value.toLowerCase());
     };
+
+    const handleSearchClick = () => {
+        const input = document.querySelector('.my-input');
+        onSearch(input.value.toLowerCase());
+    }
 
     const logoutHandler = async () => {
         try {
@@ -55,7 +57,7 @@ const Navbar = ({ onOpen, onSearch }) => {
                         </NavLink>
                         <Stack id="search" ml={'20px'} marginTop={'2px'}>
                             <InputGroup
-                                zIndex="10"
+                                // zIndex="10"
                                 _hover={{
                                     borderColor: "rgba(7,50,135,0.4)",
                                     borderWidth: "2px",
@@ -68,7 +70,8 @@ const Navbar = ({ onOpen, onSearch }) => {
                                     placeholder='Search Blog'
                                     color = 'black'
                                     borderColor={'black'}
-                                    onChange={handleSearch}
+                                    boxShadow={'md'}
+                                    // onChange={handleSearch}
                                 />
                                 <InputRightElement>
                                     <Box mx="0" h="24px" borderRight="1px solid black"></Box>
@@ -77,8 +80,17 @@ const Navbar = ({ onOpen, onSearch }) => {
                                         height={"38px"}
                                         backgroundColor={"transparent"}
                                         aria-label="Search"
-                                        icon={<SearchIcon color='gray.500' />}
-                                        // onClick={handleSearch}
+                                        _hover={{
+                                            color: 'blue.500',
+                                            transition: 'all 0.2s ease-in-out'
+                                        }}
+                                        icon={<SearchIcon
+                                            _hover={{
+                                                color: 'blue.500',
+                                                transition: 'all 0.2s ease-in-out'
+                                            }}
+                                            color='gray.500' />}
+                                        onClick={handleSearchClick}
                                     />
                                 </InputRightElement>
                             </InputGroup>

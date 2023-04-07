@@ -114,37 +114,64 @@ const Home = () => {
         setSelectedStatus(null);
         setSelectedCategory(null);
         setAllBlogsClicked(true);
+        setSearchTerm("");
     };
 
     const publishHandler = () => {
         setPublished(todos.filter((t) => t.isComplete === true));
         setSelectedCategory(null);
         setSelectedStatus(true);
+        setSearchTerm("");
     };
 
     const unpublishHandler = () => {
         setUnPublished(todos.filter((t) => t.isComplete === false));
         setSelectedCategory(null);
         setSelectedStatus(false);
+        setSearchTerm("");
     };
 
-    const filteredTodos = selectedCategory !== null
-        ? todos.filter(
-            (todo) =>
-                todo.category === selectedCategory &&
-                (selectedStatus === null || todo.isComplete === selectedStatus) &&
-                (searchTerm === "" || (todo.title.toLowerCase().includes(searchTerm) ||
-                    todo.description.toLowerCase().includes(searchTerm)))
-        )
-        : selectedStatus !== null
+    // const filteredTodos = selectedCategory !== null
+    //     ? todos.filter(
+    //         (todo) =>
+    //             todo.category === selectedCategory &&
+    //             (selectedStatus === null || todo.isComplete === selectedStatus) &&
+    //             (searchTerm === "" || (todo.title.toLowerCase().includes(searchTerm) ||
+    //                 todo.description.toLowerCase().includes(searchTerm)))
+    //     )
+    //     : selectedStatus !== null
+    //         ? todos.filter(
+    //             (todo) =>
+    //                 todo.isComplete === selectedStatus &&
+    //                 (searchTerm === "" || (todo.title.toLowerCase().includes(searchTerm) ||
+    //                     todo.description.toLowerCase().includes(searchTerm)))
+    //         )
+    //         : todos.filter((todo) => (todo.title.toLowerCase().includes(searchTerm) ||
+    //             todo.description.toLowerCase().includes(searchTerm)));
+
+    const filteredTodos =
+        selectedCategory !== null
             ? todos.filter(
                 (todo) =>
-                    todo.isComplete === selectedStatus &&
-                    (searchTerm === "" || (todo.title.toLowerCase().includes(searchTerm) ||
-                        todo.description.toLowerCase().includes(searchTerm)))
+                    todo.category === selectedCategory &&
+                    (selectedStatus === null || todo.isComplete === selectedStatus) &&
+                    (searchTerm === "" ||
+                        todo.title.toLowerCase().includes(searchTerm) ||
+                        todo.description.toLowerCase().includes(searchTerm))
             )
-            : todos.filter((todo) => (todo.title.toLowerCase().includes(searchTerm) ||
-                todo.description.toLowerCase().includes(searchTerm)));
+            : selectedStatus !== null
+                ? todos.filter(
+                    (todo) =>
+                        todo.isComplete === selectedStatus &&
+                        (searchTerm === "" ||
+                            todo.title.toLowerCase().includes(searchTerm) ||
+                            todo.description.toLowerCase().includes(searchTerm))
+                )
+                : todos.filter(
+                    (todo) =>
+                        todo.title.toLowerCase().includes(searchTerm) ||
+                        todo.description.toLowerCase().includes(searchTerm)
+                );
 
     return (
         <div>
