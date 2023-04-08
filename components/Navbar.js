@@ -7,7 +7,7 @@ import {
     Heading, IconButton,
     Input,
     InputGroup,
-    InputLeftElement, InputRightElement, Stack
+    InputLeftElement, InputRightElement, Stack, Text
 } from "@chakra-ui/react";
 import NavLink from "next/link";
 import { useRouter } from "next/router";
@@ -15,7 +15,7 @@ import { useState } from "react";
 import { supabaseClient } from "../lib/client";
 import {SearchIcon} from "@chakra-ui/icons";
 
-const Navbar = ({ onOpen, onSearch, allTodos }) => {
+const Navbar = ({ onOpen, onSearch }) => {
     const router = useRouter();
     const [isLogoutLoading, setIsLogoutLoading] = useState(false);
 
@@ -61,9 +61,7 @@ const Navbar = ({ onOpen, onSearch, allTodos }) => {
                 >
                     <Box display={'flex'}>
                         <NavLink href="/">
-                            <Heading mr="4" as="button" color={"black"}
-                                     onClick={allTodos}
-                            >
+                            <Heading mr="4" as="button" color={"black"}>
                                 BlogApp
                             </Heading>
                         </NavLink>
@@ -110,11 +108,11 @@ const Navbar = ({ onOpen, onSearch, allTodos }) => {
                     </Box>
                     <Box>
                         <ButtonGroup spacing="4" ml="6">
-                            <Button
-                                colorScheme="pink"
-                            >
-                                <NavLink href="/profile">Profile</NavLink>
-                            </Button>
+                            <NavLink href="/profile">
+                                <Button colorScheme="pink">
+                                    Profile
+                                </Button>
+                            </NavLink>
                             {router.pathname === "/" && (
                                 <Button colorScheme="blue" onClick={onOpen}>
                                     Add Blog

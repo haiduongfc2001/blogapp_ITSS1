@@ -129,7 +129,7 @@ const Profile = () => {
                     <Avatar
                         alt={"avatar"}
                         size="2xl"
-                        src={avatarurl}
+                        src={avatarurl || ""}
                         // name={user?.email}
                     />
                     <FormLabel
