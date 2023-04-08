@@ -27,13 +27,19 @@ const SingleTodo = ({ todo, openHandler, deleteHandler, isDeleteLoading }) => {
         <Box
             position="relative"
             maxW="sm"
-            // minH="sm"
             borderWidth="1px"
             borderRadius="lg"
             overflow="hidden"
             p="4"
             backgroundColor={'#edf2f7'}
             pb={20}
+            // transition="transform 0.2s ease-in-out"
+            // _hover={{ transform: "scale(1.05)" }}
+            _hover={{
+                transform: "translateY(-5px)",
+                transition: "transform 0.2s ease-out",
+                boxShadow: "lg",
+            }}
         >
             <Heading noOfLines={[1, 2, 3]}
                 size="md" mt="3" color={'black'}>
