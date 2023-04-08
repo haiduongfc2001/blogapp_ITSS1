@@ -131,24 +131,6 @@ const Home = () => {
         setSearchTerm("");
     };
 
-    // const filteredTodos = selectedCategory !== null
-    //     ? todos.filter(
-    //         (todo) =>
-    //             todo.category === selectedCategory &&
-    //             (selectedStatus === null || todo.isComplete === selectedStatus) &&
-    //             (searchTerm === "" || (todo.title.toLowerCase().includes(searchTerm) ||
-    //                 todo.description.toLowerCase().includes(searchTerm)))
-    //     )
-    //     : selectedStatus !== null
-    //         ? todos.filter(
-    //             (todo) =>
-    //                 todo.isComplete === selectedStatus &&
-    //                 (searchTerm === "" || (todo.title.toLowerCase().includes(searchTerm) ||
-    //                     todo.description.toLowerCase().includes(searchTerm)))
-    //         )
-    //         : todos.filter((todo) => (todo.title.toLowerCase().includes(searchTerm) ||
-    //             todo.description.toLowerCase().includes(searchTerm)));
-
     const filteredTodos =
         selectedCategory !== null
             ? todos.filter(

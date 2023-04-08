@@ -70,7 +70,9 @@ const SignIn = () => {
                                 border="1px solid"
                                 bgColor="#F7FAFC"
                                 color={"black"}
-
+                                minH="30px"
+                                justifyContent="center"
+                                alignItems="center"
                             >
                                 {email}
                             </Box>

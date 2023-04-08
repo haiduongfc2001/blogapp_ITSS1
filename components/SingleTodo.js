@@ -27,6 +27,7 @@ const SingleTodo = ({ todo, openHandler, deleteHandler, isDeleteLoading }) => {
         <Box
             position="relative"
             maxW="sm"
+            // minH="sm"
             borderWidth="1px"
             borderRadius="lg"
             overflow="hidden"
@@ -38,7 +39,7 @@ const SingleTodo = ({ todo, openHandler, deleteHandler, isDeleteLoading }) => {
                 size="md" mt="3" color={'black'}>
                 {todo.title}
             </Heading>
-            <Badge margin='8px auto'
+            <Badge margin='16px auto 8px'
                    borderRadius='full'
                    px='2'
                    colorScheme='teal'>
@@ -55,15 +56,18 @@ const SingleTodo = ({ todo, openHandler, deleteHandler, isDeleteLoading }) => {
             <Text color="gray.400" mt="1" fontSize="sm">
                 {getDateInMonthDayYear(todo.insertedat)}
             </Text>
-            {/*<Divider my="4" h='1px' bg="gray.800" />*/}
-            <Divider
+
+            <Box
                 my="4"
                 h='2px'
                 bg="gray.800"
                 w="88"
-                // mx="5%"
-                mt="10px"
+                // mt="10px"
                 mb="10px"
+                mt="calc(6% - 1px)"
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
             />
             <Text
                 noOfLines={[1, 2, 3, 4]}

@@ -55,6 +55,8 @@ const ManageTodo = ({ isOpen, onClose, initialRef, todo, setTodo }) => {
                 .update({ title, category, description, isComplete, user_id: user.id })
                 .eq("id", todo.id);
             supabaseError = error;
+            // window.location.reload();
+            location.reload();
             toast({
                 title: "Updated Blog",
                 status: "success",

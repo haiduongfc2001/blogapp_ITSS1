@@ -15,18 +15,28 @@ import { useState } from "react";
 import { supabaseClient } from "../lib/client";
 import {SearchIcon} from "@chakra-ui/icons";
 
-const Navbar = ({ onOpen, onSearch }) => {
+const Navbar = ({ onOpen, onSearch, allTodos }) => {
     const router = useRouter();
     const [isLogoutLoading, setIsLogoutLoading] = useState(false);
 
-    const handleSearch = (event) => {
-        onSearch(event.target.value.toLowerCase());
-    };
+    const [selectedStatus, setSelectedStatus] = useState(null);
+    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [searchTerm, setSearchTerm] = useState("");
+
+    // const handleSearch = (event) => {
+    //     onSearch(event.target.value.toLowerCase());
+    // };
 
     const handleSearchClick = () => {
         const input = document.querySelector('.my-input');
         onSearch(input.value.toLowerCase());
     }
+
+    const handleKeyDown = (event) => {
+        if (event.key === "Enter") {
+            handleSearchClick();
+        }
+    };
 
     const logoutHandler = async () => {
         try {
@@ -51,13 +61,14 @@ const Navbar = ({ onOpen, onSearch }) => {
                 >
                     <Box display={'flex'}>
                         <NavLink href="/">
-                            <Heading mr="4" as="button" color={"black"}>
+                            <Heading mr="4" as="button" color={"black"}
+                                     onClick={allTodos}
+                            >
                                 BlogApp
                             </Heading>
                         </NavLink>
                         <Stack id="search" ml={'20px'} marginTop={'2px'}>
                             <InputGroup
-                                // zIndex="10"
                                 _hover={{
                                     borderColor: "rgba(7,50,135,0.4)",
                                     borderWidth: "2px",
@@ -71,6 +82,7 @@ const Navbar = ({ onOpen, onSearch }) => {
                                     color = 'black'
                                     borderColor={'black'}
                                     boxShadow={'md'}
+                                    onKeyDown={handleKeyDown}
                                     // onChange={handleSearch}
                                 />
                                 <InputRightElement>
