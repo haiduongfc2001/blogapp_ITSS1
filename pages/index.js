@@ -205,6 +205,7 @@ const Home = () => {
                         <Select
                             placeholder="Category"
                             borderColor={"black"}
+                            cursor="pointer"
                             onChange={(e) => setSelectedCategory(e.target.value)}
                             value={
                                 allBlogsClicked ? '' : selectedCategory || ''
