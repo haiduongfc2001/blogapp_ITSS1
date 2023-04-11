@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import NavLink from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import React, { useState } from "react";
 import { supabaseClient } from "../lib/client";
 import {SearchIcon} from "@chakra-ui/icons";
 
@@ -63,6 +63,7 @@ const Navbar = ({ onOpen, onSearch }) => {
                         {/*<NavLink href="/">*/}
                         {/*    */}
                         {/*</NavLink>*/}
+                        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
                         <a href="/">
                             <Heading mr="4" as="button" color={"black"}>
                                 BlogApp
