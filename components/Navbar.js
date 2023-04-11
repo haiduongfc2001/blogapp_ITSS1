@@ -60,11 +60,14 @@ const Navbar = ({ onOpen, onSearch }) => {
                     justify="space-between"
                 >
                     <Box display={'flex'}>
-                        <NavLink href="/">
+                        {/*<NavLink href="/">*/}
+                        {/*    */}
+                        {/*</NavLink>*/}
+                        <a href="/">
                             <Heading mr="4" as="button" color={"black"}>
                                 BlogApp
                             </Heading>
-                        </NavLink>
+                        </a>
                         <Stack id="search" ml={'20px'} marginTop={'2px'}>
                             <InputGroup
                                 _hover={{
